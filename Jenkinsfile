@@ -20,11 +20,6 @@ node {
     }
 
     stage("test"){
-        try {
-            sh 'npm run test'
-        } catch( e ){
-            sh "echo ${e}"
-        }
-        
+        sh 'npm run test'
     }
 }
