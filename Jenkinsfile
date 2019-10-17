@@ -8,10 +8,11 @@ node {
         git branch: 'master', url: 'https://github.com/Camilo0414/movie-analyst-api.git'
     }
 
-    stage("install"){
-        sh 'curl -sL https://deb.nodesource.com/setup_10.x | bash -'
-        sh 'apt-get install -y nodejs'
-    }
+    //INSTALATION PREVIOUSLY MADE
+    // stage("install"){
+    //     sh 'curl -sL https://deb.nodesource.com/setup_10.x | bash -'
+    //     sh 'apt-get install -y nodejs'
+    // }
 
     stage("build"){
         sh 'export PORT=3000'
