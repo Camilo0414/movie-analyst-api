@@ -16,6 +16,7 @@ node {
 
     stage("build"){
         sh 'export PORT=3000'
+        sh 'npm install'
     }
 
     stage("test"){
