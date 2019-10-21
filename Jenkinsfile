@@ -21,7 +21,6 @@ node {
     }
 
     stage("test"){
-        sh 'echo $(PORT)'
         sh 'npm run test'
     }
 }
