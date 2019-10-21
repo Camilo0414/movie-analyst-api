@@ -22,4 +22,8 @@ node {
     stage("test"){
         sh 'npm run test'
     }
+
+    stage("deploy"){
+        sh 'sudo scp -rp -i /home/ec2-user/.ssh/id_rsa /home/ec2-user/jenkins_home/workspace/test_rampup/ ec2-user@10.0.4.5:/home/ec2-user/movie-analyst-api'
+    }
 }
