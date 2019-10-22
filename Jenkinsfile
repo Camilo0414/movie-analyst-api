@@ -24,7 +24,10 @@ node {
     }
 
     stage("deploy"){
-        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend/ ec2-user@10.0.3.26:/home/ec2-user/backend'
-        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend/ ec2-user@10.0.2.107:/home/ec2-user/backend'
+        sh 'ssh -i /var/jenkins_home/.ssh/id_rsa ec2-user@10.0.3.26 rm -rf /home/ec2-user/backend'
+        sh 'ssh -i /var/jenkins_home/.ssh/id_rsa ec2-user@10.0.2.107 rm -rf /home/ec2-user/backend'
+        
+        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend ec2-user@10.0.3.26:/home/ec2-user/backend'
+        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend ec2-user@10.0.2.107:/home/ec2-user/backend'
     }
 }
