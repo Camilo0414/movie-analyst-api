@@ -24,6 +24,7 @@ node {
     }
 
     stage("deploy"){
-        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend/ ec2-user@10.0.4.5:/home/ec2-user/movie-analyst-api'
+        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend/ ec2-user@10.0.3.26:/home/ec2-user/backend'
+        sh 'scp -rp -i /var/jenkins_home/.ssh/id_rsa /var/jenkins_home/workspace/rampup/backend/ ec2-user@10.0.2.107:/home/ec2-user/backend'
     }
 }
